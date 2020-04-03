@@ -20,9 +20,10 @@ build-master:
   environment:
     name: $CI_COMMIT_REF_NAME
   script:
-    - echo "Building and shipping image to $CI_REGISTRY_IMAGE"
-    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG  --destination $CI_REGISTRY_IMAGE:latest $IMAGE_LABELS --label build-date=`date -Iseconds`
+    - | 
+      echo "Building and shipping image to $CI_REGISTRY_IMAGE"
+      echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
+      /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG  --destination $CI_REGISTRY_IMAGE:latest $IMAGE_LABELS --label build-date=`date -Iseconds`
   only:
     - master
 
