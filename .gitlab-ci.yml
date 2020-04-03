@@ -54,5 +54,5 @@ build-for-docker-hub-registry:
           FORMATTEDTAGLIST="${FORMATTEDTAGLIST} --destination $CI_REGISTRY_IMAGE:$TAG "; 
         done; 
       fi
-      echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
+      echo "{\"auths\":{\"$CI_REGISTRY_AUTH_URL\":{\"auth\":\"$(echo -n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
       /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $ADDLATESTTAG $FORMATTEDTAGLIST $IMAGE_LABELS --label build-date=`date -Iseconds`
