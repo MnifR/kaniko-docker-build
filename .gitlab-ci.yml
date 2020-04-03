@@ -1,5 +1,8 @@
 #Following instructions (as of 2020-04-01): https://docs.gitlab.com/ee/ci/docker/using_kaniko.html
 #Kaniko docs are here: https://github.com/GoogleContainerTools/kaniko
+#While this example shows building to multiple registries for all branches, with a few modifications
+#  it can be used to build non-master branches to a "dev" container registry and only build master to 
+#  a production container registry
 image: 
   name: gcr.io/kaniko-project/executor:debug
   entrypoint: [""]
@@ -26,6 +29,7 @@ build-for-gitlab-project-registry:
       set -xv
       echo "Building and shipping image to $CI_REGISTRY_IMAGE"
       if [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ADDITIONALTAG="--destination $CI_REGISTRY_IMAGE:latest"; fi
+      if [[ -n "$ADDITIONALTAGLIST" ]]; then for TAG in $ADDITIONALTAGLIST; FORMATTEDTAGLIST+=" --destination $CI_REGISTRY_IMAGE:$TAG "; done; fi
       echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
       /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $ADDITIONALTAG $IMAGE_LABELS --label build-date=`date -Iseconds`
 
@@ -41,5 +45,6 @@ build-for-docker-hub-registry:
       set -xv    
       echo "Building and shipping image to $CI_REGISTRY_IMAGE"
       if [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ADDITIONALTAG="--destination $CI_REGISTRY_IMAGE:latest"; fi
+      if [[ -n "$ADDITIONALTAGLIST" ]]; then for TAG in $ADDITIONALTAGLIST; FORMATTEDTAGLIST+=" --destination $CI_REGISTRY_IMAGE:$TAG "; done; fi
       echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
       /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $ADDITIONALTAG $IMAGE_LABELS --label build-date=`date -Iseconds`
