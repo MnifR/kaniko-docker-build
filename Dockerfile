@@ -1,7 +1,5 @@
-FROM amazonlinux:latest
-RUN echo 'export PS1="[darwinjs/amazonlinux2powershell] \W # "' >> /etc/profile.d/darwinjs.sh
+FROM busybox:latest
+RUN mkdir -p /home/root
+RUN echo 'export PS1="[built with kaniko from https://gitlab.com/guided-explorations/gitlab-ci-yml-tips-tricks-and-hacks/kaniko-docker-build/] \W # "' >> /home/root/.profile
 
-RUN curl -s https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/installpsh-amazonlinux.sh | bash
-
-RUN yum clean all
-RUN rm -rf /var/cache/yum
+CMD echo 'Built with kaniko from https://gitlab.com/guided-explorations/gitlab-ci-yml-tips-tricks-and-hacks/kaniko-docker-build/'
