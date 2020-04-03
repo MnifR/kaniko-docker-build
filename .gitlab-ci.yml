@@ -4,7 +4,7 @@
 #  it can be used to build non-master branches to a "dev" container registry and only build master to 
 #  a production container registry
 image: 
-  name: gcr.io/kaniko-project/executor:debug
+  name: gcr.io/kaniko-project/executor:debug-edge
   entrypoint: [""]
 
 variables: 
