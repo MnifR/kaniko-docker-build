@@ -20,6 +20,10 @@ variables:
 
 build-for-gitlab-project-registry:
   stage: build
+  environment:
+    #This is only here for completeness, since there are no CI CD Variables with this scope, the project defaults are used
+    # to push to this projects docker registry
+    name: push-to-gitlab-project-registry
   script:
     - | 
       set -xv
