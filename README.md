@@ -30,7 +30,9 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 ## Demonstrates These Design Requirements, Desirements and AntiPatterns
 
 - **Development Pattern:** Use Kaniko to build containers to avoid running Docker daemon in priviledged mode. and push to internal Gitlab Container Registry or Docker Hub (external registry example).
-- **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Use Kaniko to build containers and push to internal Gitlab Container Registry or Docker Hub (external registry example) discussed here: https://docs.gitlab.com/ee/ci/docker/using_kaniko.html
+- **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Use Kaniko to build containers and push to internal Gitlab Container Registry or Docker Hub (external registry example) discussed here: https://docs.gitlab.com/ee/ci/docker/using_kaniko.html 
+
+  > **However, this example's code is more secure than the Kaniko example repeated in the GitLab documentation.** 
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Tagging with key GitLab CI information
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Labeling with additional GitLab CI build meta data
 - **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Adding set of arbitrary tags in space delimited variable (compact and flexible)
