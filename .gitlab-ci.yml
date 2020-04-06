@@ -26,7 +26,6 @@ build-for-gitlab-project-registry:
     name: push-to-gitlab-project-registry
   script:
     - | 
-      set -xv
       echo "Building and shipping image to $CI_REGISTRY_IMAGE"
       if [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ADDLATESTTAG="--destination $CI_REGISTRY_IMAGE:latest"; fi
       if [[ -n "$ADDITIONALTAGLIST" ]]; then 
@@ -47,8 +46,7 @@ build-for-docker-hub-registry:
   environment:
     name: push-to-docker-hub
   script:
-    - |
-      set -xv    
+    - |   
       echo "Building and shipping image to $CI_REGISTRY_IMAGE"
       if [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ADDLATESTTAG="--destination $CI_REGISTRY_IMAGE:latest"; fi
       if [[ -n "$ADDITIONALTAGLIST" ]]; then 
