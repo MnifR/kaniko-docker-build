@@ -49,7 +49,8 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 ## Cross References and Documentation
 
 - GitLab Kaniko Documentation: https://docs.gitlab.com/ee/ci/docker/using_kaniko.html
-- Kaniko Documentation (to go beyond the basic example in GitLab documentation): https://github.com/GoogleContainerTools/kaniko
+- Kaniko Documentation (to go beyond the basic example in GitLab documentation): https://github.com/GoogleContainerTools/kaniko/blob/master/README.md
+- List of possible Kaniko containers to use (remember it must be tagged "debug"): https://console.cloud.google.com/gcr/images/kaniko-project/GLOBAL/executor
 
 ## Other Possible Uses
 
