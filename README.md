@@ -44,7 +44,17 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 - **.gitlab-ci.yml** "trigger:include:" ![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png) enabling dynamically generated yml to be run.
 
 ## Using This Pattern
-- To see more than one sub-job, specify `JOB_NUM` for the number of jobs in the downstream pipeline before you run the pipeline
+- If you copy this repo, to leverage the build to docker, you must setup the following CI CD Variables:
+
+  | Type     | Key                  | Value                       | Protected | Masked | Scope              |
+  | -------- | -------------------- | --------------------------- | --------- | ------ | ------------------ |
+  | Variable | CI_REGISTRY          | https://index.docker.io/v1/ | No        | No     | push-to-docker-hub |
+  | Variable | CI_REGISTRY_IMAGE    | docker.io/youruser/yourrepo | No        | No     | push-to-docker-hub |
+  | Variable | CI_REGISTRY_PASSWORD | yourpassword                | No        | Yes    | push-to-docker-hub |
+  | Variable | CI_REGISTRY          | https://index.docker.io/v1/ | No        | No     | push-to-docker-hub |
+  | Variable | CI_REGISTRY_USER     | Yourdockeruserid            | No        | No     | push-to-docker-hub |
+
+   
 
 ## Cross References and Documentation
 
