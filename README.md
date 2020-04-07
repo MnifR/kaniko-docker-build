@@ -24,6 +24,10 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 
     [Click to see Features by Edition](https://about.gitlab.com/features/) 
 
+- **Tested On**: 
+  - GitLab Docker-Executor Runner (GitLab.com Shared Runner) without enabling DinD Service.
+  - GitLab Kubernetes Runner without enabling DinD Service.
+
 * **References and Featured In**:
 
   
@@ -53,8 +57,6 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
   | Variable | CI_REGISTRY_PASSWORD | yourpassword                | No        | Yes    | push-to-docker-hub |
   | Variable | CI_REGISTRY          | https://index.docker.io/v1/ | No        | No     | push-to-docker-hub |
   | Variable | CI_REGISTRY_USER     | Yourdockeruserid            | No        | No     | push-to-docker-hub |
-
-   
 
 ## Cross References and Documentation
 
