@@ -29,7 +29,7 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
   - GitLab Kubernetes Runner without enabling DinD Service.
 
 * **References and Featured In**:
-
+  * [Least Privilege Container Builds with Kaniko on GitLab](https://www.youtube.com/watch?v=d96ybcELpFs)
   
 ## Demonstrates These Design Requirements, Desirements and AntiPatterns
 
