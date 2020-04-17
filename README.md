@@ -1,5 +1,9 @@
 # Kaniko Docker Builds
 
+## If This Helps You, Please Star This Project :)
+
+One click can help us keep providing and improving Guided Explorations.  If you find this information helpful, please click the star on this project details page here! [Project Overview](https://gitlab.com/guided-explorations/containers/kaniko-docker-build)
+
 ## Guided Explorations Concept
 
 This Guided Exploration is built according to a specific vision and requirements that maximize its value to both GitLab and GitLab's customers.  You can read more here: [The Guided Explorations Concept](https://gitlab.com/guided-explorations/guided-exploration-concept/blob/master/README.md)
