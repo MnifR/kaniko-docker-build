@@ -20,6 +20,8 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 
 * **Publish Date**: 2020-04-06
 
+* **Last Update**: 2020-05-17
+
 * **GitLab Version Released On**: 12.10
 
 * **GitLab Edition Required**: 
@@ -38,12 +40,12 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 ## Demonstrates These Design Requirements, Desirements and AntiPatterns
 
 - **Development Pattern:** Use Kaniko to build containers to avoid running Docker daemon in priviledged mode. and push to internal Gitlab Container Registry or Docker Hub (external registry example).
+- **Docker Development Pattern:** Attempts to comply with opencontainers labelling: https://github.com/opencontainers/image-spec/blob/master/annotations.md#back-compatibility-with-label-schema
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Use Kaniko to build containers and push to internal Gitlab Container Registry or Docker Hub (external registry example) discussed here: https://docs.gitlab.com/ee/ci/docker/using_kaniko.html 
-
-  > **However, this example's code is more secure than the Kaniko example repeated in the GitLab documentation.** 
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Tagging with key GitLab CI information
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Labeling with additional GitLab CI build meta data
-- **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Adding set of arbitrary tags in space delimited variable (compact and flexible)
+- **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Adding set of arbitrary tags in space delimited variable (compact and flexible)
+- **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Add the git version tag - either with the last available version tag in git or ONLY if the current commit has a version (configurable)
 - **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Adding "latest" tag only when building master branch.
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Using variable scoping to override specific variables discussed here: https://docs.gitlab.com/ee/ci/variables/#limiting-environment-scopes-of-environment-variables
 
