@@ -42,7 +42,10 @@ get-latest-git-version:
     paths:
       - VERSIONTAG.txt
 
-.sharedscript: &sharedscript
+
+.build_with_kaniko:
+  #Hidden job to use as an "extends" template
+  stage: build
   script:
     - | 
       echo "Building and shipping image to $CI_REGISTRY_IMAGE"
@@ -79,15 +82,22 @@ get-latest-git-version:
 
 
 build-for-gitlab-project-registry:
-  stage: build
+  extends: .build_with_kaniko
   environment:
     #This is only here for completeness, since there are no CI CD Variables with this scope, the project defaults are used
     # to push to this projects docker registry
     name: push-to-gitlab-project-registry
-  <<: *sharedscript
 
+build-for-docker-hub-registry_new:
+  extends: .build_with_kaniko
+  stage: build
+  #This causes CI CD Variables to be taken from GitLab Project definition for variable scope "push-to-docker-hub", 
+  # which overrides CI_REGISTRY, CI_REGISTRY_IMAGE, CI_REGISTRY_USER and CI_REGISTRY_PASSWORD
+  # these variables with this scope would need to be created if you copy this project to another group or instance
+  environment:
+    name: push-to-docker-hub
 
-build-for-docker-hub-registry:
+.build-for-docker-hub-registry:
   stage: build
   #This causes CI CD Variables to be taken from GitLab Project definition for variable scope "push-to-docker-hub", 
   # which overrides CI_REGISTRY, CI_REGISTRY_IMAGE, CI_REGISTRY_USER and CI_REGISTRY_PASSWORD
