@@ -36,9 +36,12 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
   - GitLab Docker-Executor Runner (GitLab.com Shared Runner) without enabling DinD Service.
   - GitLab Kubernetes Runner without enabling DinD Service.
 
-* **References and Featured In**:
-  * [Least Privilege Container Builds with Kaniko on GitLab](https://www.youtube.com/watch?v=d96ybcELpFs)
-  
+## References and Featured In:
+
+    *  Video Walkthrough: [Least Privilege Container Builds with Kaniko on GitLab](https://www.youtube.com/watch?v=d96ybcELpFs)
+    * The labelling and tagging methodology and code in this example is completely reusable with docker (including the method for extracting the latest git tag using a pre stage) and it can be observed with docker building a customer kaniko container here: https://gitlab.com/guided-explorations/containers/build-your-own-kaniko
+    * A practical example of using this method is here: https://gitlab.com/guided-explorations/containers/aws-cli-tools  
+    
 ## Demonstrates These Design Requirements, Desirements and AntiPatterns
 
 - **Development Pattern:** Use Kaniko to build containers to avoid running Docker daemon in priviledged mode. and push to internal Gitlab Container Registry or Docker Hub (external registry example).
