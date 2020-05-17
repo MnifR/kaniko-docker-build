@@ -47,12 +47,15 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Tagging with key GitLab CI information
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Labeling with additional GitLab CI build meta data
 - **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Adding set of arbitrary tags in space delimited variable (compact and flexible)
+- **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Using variable scoping to override specific variables discussed here: https://docs.gitlab.com/ee/ci/variables/#limiting-environment-scopes-of-environment-variables
+
+### v1.2.0 Updates (2020-05-17)
+
 - **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):** Add the git version tag - either with the last available version tag in git or ONLY if the current commit has a version (configurable)
 - **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):** Adding "latest" tag only when building master branch.
-- **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Using variable scoping to override specific variables discussed here: https://docs.gitlab.com/ee/ci/variables/#limiting-environment-scopes-of-environment-variables
-- **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):**  Clean, reusable code for good image labelling and tagging - including being explicit about the only difference between docker and kaniko tagging argument (--tag in docker becomes --destination in kaniko) so code is reusable with Docker in Docker implementations.
+- **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):**  Clean, reusable code for good image labelling and tagging - including being explicit about the only difference between docker and kaniko tagging argument (--tag in docker becomes --destination in kaniko) so code is reusable with Docker in Docker implementations.
 
-#### GitLab CI Functionality:
+### GitLab CI Functionality:
 
 - **.gitlab-ci.yml** "environment:" ![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)to allow variables to have alternate values depending on environment scope discussed here:: https://docs.gitlab.com/ee/ci/yaml/#environment
 - **.gitlab-ci.yml** "trigger:include:" ![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png) enabling dynamically generated yml to be run.
