@@ -22,6 +22,8 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 
 * **Last Update**: 2020-05-17
 
+* **Exploration Version**: v1.2.0
+
 * **GitLab Version Released On**: 12.10
 
 * **GitLab Edition Required**: 
@@ -45,9 +47,10 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Tagging with key GitLab CI information
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Image Labeling with additional GitLab CI build meta data
 - **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Adding set of arbitrary tags in space delimited variable (compact and flexible)
-- **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Add the git version tag - either with the last available version tag in git or ONLY if the current commit has a version (configurable)
-- **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Adding "latest" tag only when building master branch.
+- **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):** Add the git version tag - either with the last available version tag in git or ONLY if the current commit has a version (configurable)
+- **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):** Adding "latest" tag only when building master branch.
 - **GitLab Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):** Using variable scoping to override specific variables discussed here: https://docs.gitlab.com/ee/ci/variables/#limiting-environment-scopes-of-environment-variables
+- **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/):**  Clean, reusable code for good image labelling and tagging - including being explicit about the only difference between docker and kaniko tagging argument (--tag in docker becomes --destination in kaniko) so code is reusable with Docker in Docker implementations.
 
 #### GitLab CI Functionality:
 
