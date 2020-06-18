@@ -31,6 +31,8 @@ get-latest-git-version:
   image: 
     name: alpine/git
     entrypoint: [""]
+  rules:
+    - if: '$VERSIONLABELMETHOD == "LastVersionTagInGit"'    
   script:
     - |
       echo "the google kaniko container does not have git and does not have a packge manager to install it"
