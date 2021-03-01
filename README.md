@@ -71,7 +71,6 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
   | Variable | CI_REGISTRY          | https://index.docker.io/v1/ | No        | No     | push-to-docker-hub |
   | Variable | CI_REGISTRY_IMAGE    | docker.io/youruser/yourrepo | No        | No     | push-to-docker-hub |
   | Variable | CI_REGISTRY_PASSWORD | yourpassword                | No        | Yes    | push-to-docker-hub |
-  | Variable | CI_REGISTRY          | https://index.docker.io/v1/ | No        | No     | push-to-docker-hub |
   | Variable | CI_REGISTRY_USER     | Yourdockeruserid            | No        | No     | push-to-docker-hub |
 
 ## Cross References and Documentation
