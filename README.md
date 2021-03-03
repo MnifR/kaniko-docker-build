@@ -20,9 +20,9 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 
 * **Publish Date**: 2020-04-06
 
-* **Last Update**: 2020-05-17
+* **Last Update**: 2021-03-03
 
-* **Exploration Version**: v1.2.0
+* **Exploration Version**: v1.3.0
 
 * **GitLab Version Released On**: 12.10
 
@@ -57,6 +57,10 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 - **Docker Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):** Add the git version tag - either with the last available version tag in git or ONLY if the current commit has a version (configurable)
 - **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):** Adding "latest" tag only when building master branch.
 - **Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.2.0):**  Clean, reusable code for good image labelling and tagging - including being explicit about the only difference between docker and kaniko tagging argument (--tag in docker becomes --destination in kaniko) so code is reusable with Docker in Docker implementations.
+
+### v1.3.0 Updates (2021-03-03)
+
+- **Kaniko Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.3.0):** Add the ability to configure Kaniko layer caching to the target registry and enable it by default.
 
 ### GitLab CI Functionality:
 

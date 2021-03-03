@@ -3,11 +3,13 @@
 #While this example shows building to multiple registries for all branches, with a few modifications
 #  it can be used to build non-master branches to a "dev" container registry and only build master to 
 #  a production container registry
+
 image: 
   name: gcr.io/kaniko-project/executor:debug
   entrypoint: [""]
 
 variables: 
+  KANIKO_CACHE_ARGS: "--cache=true --cache-copy-layers=true --cache-ttl=24h"
   VERSIONLABELMETHOD: "OnlyIfThisCommitHasVersion" # options: "OnlyIfThisCommitHasVersion","LastVersionTagInGit"
   IMAGE_LABELS: >
     --label org.opencontainers.image.vendor=$CI_SERVER_URL/$GITLAB_USER_LOGIN
@@ -79,11 +81,10 @@ get-latest-git-version:
       #Reformat Docker tags to kaniko's --destination argument:
       FORMATTEDTAGLIST=$(echo "${FORMATTEDTAGLIST}" | sed s/\-\-tag/\-\-destination/g) 
 
-      echo $FORMATTEDTAGLIST
-      echo $IMAGE_LABELS
+      echo "Kaniko arguments to run: --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile $KANIKO_CACHE_ARGS $FORMATTEDTAGLIST $IMAGE_LABELS"
       mkdir -p /kaniko/.docker
       echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
-      /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile $FORMATTEDTAGLIST $IMAGE_LABELS
+      /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile $KANIKO_CACHE_ARGS $FORMATTEDTAGLIST $IMAGE_LABELS
 
 
 build-for-gitlab-project-registry:
