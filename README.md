@@ -60,7 +60,7 @@ GitLab's features are constantly and rapidly evolving and we cannot keep every e
 
 ### v1.3.0 Updates (2021-03-03)
 
-- **Kaniko Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.3.0):** Add the ability to configure Kaniko layer caching to the target registry and enable it by default.
+- **Kaniko Development Pattern [![FC](https://gitlab.com/guided-explorations/guided-exploration-concept/-/raw/master/images/FC.png)](https://about.gitlab.com/features/) (v1.3.0):** Add the ability to configure Kaniko layer caching to the target registry and enable it by default. Kaniko can also cache to the local file system (untested in this Guided Exploration). More Information on Kaniko Caching: https://cloud.google.com/build/docs/kaniko-cache
 
 ### GitLab CI Functionality:
 
