@@ -1,8 +1,7 @@
 # Kaniko Docker Builds
 
-## If This Helps You, Please Star This Project :)
-
-One click can help us keep providing and improving Guided Explorations.  If you find this information helpful, please click the star on this project's details page! [Project Details](https://gitlab.com/guided-explorations/containers/kaniko-docker-build)
+## Link
+ [Project Details](https://gitlab.com/guided-explorations/containers/kaniko-docker-build)
 
 ## Guided Explorations Concept
 
